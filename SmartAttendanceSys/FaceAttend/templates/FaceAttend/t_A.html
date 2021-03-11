@@ -1,0 +1,15 @@
+<html>
+ <head>
+ <title> Attendance </title>
+ </head>
+ <body>
+	<form action="{% url 'FaceAttend:do_attendance' %}" method="post" enctype="multipart/form-data">
+		{% csrf_token %}
+		branch : <input type="text" name="branch"/><br>
+		sem : <input type="text" name="sem"/><br>
+		sub id : <input type="text" name="sub_id"/><br>
+		<input type="file" capture="environment" accept="image/*" name="A_img">
+		<input type="submit" value="attend">
+	</form>
+ </body>
+</html>
